@@ -14,11 +14,14 @@
     <% end %>
   </div>
 
+  <%#= cl_image_path 'qlxtdrzjro1qtuopebou', width: 400, height: 300, crop: :fill %>
+  <%#= cl_image_tag "rjczypmhzzsloyqoyx3i", width: 150, height: 150, crop: :thumb, gravity: :face %>
+
   <div class="row">
     <% @lists.each do |list| %>
       <div class="col-12 colsm-6 col-md-4">
         <%= link_to list_path(list), class: 'card-category-link' do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list_image(list) %>)">
             <%= list.name %>
           </div>
         <% end %>
